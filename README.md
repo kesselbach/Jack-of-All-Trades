@@ -89,9 +89,13 @@
 + **Firstly, we need to download the** ``jacks_password_list`` **file to our machine. Open a python server on the Jack box and we're gonna get the file on our's**
 
 **The Jack box**
+
 ``www-data@jack-of-all-trades:/home$ python -m SimpleHTTPServer 6999``
+
 **Our machine**
+
 ``{kali@kali:Jack of All Trades_0}$ wget 10.10.252.248:6999/jacks_password_list``
+
 
 + **Now, having the wordlist, let's start the bruteforce phase. Don't forget to set the port for the ssh service, because it's not on the default (22), but the 80 one**
 
