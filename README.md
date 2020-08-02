@@ -36,7 +36,7 @@
 
 **A passphrase is requested, so we cannot immediately decrypt the image, but we can continue to enumerate the http page. Let's take a look into the source code of the page**
 
-+ **We can spot a message left in the source code of the page: a recovery message which tells us we can connect on the /recovery.php page and there's also a base64 encoded message*
++ **We can spot a message left in the source code of the page: a recovery message which tells us we can connect on the /recovery.php page and there's also a base64 encoded message**
 
 ![7](images/base64.jpg?raw=true "base64")
 
