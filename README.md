@@ -14,7 +14,7 @@
 
 ![2](images/restrict.jpg?raw=true "restrict")
 
-**We can allow this restricted port making some configuration inside the mozilla browser. [Allow restricted ports](https://support.mozilla.org/en-US/questions/1083282#answer-780274). Go into the about:config page in the url, search for the ports and add the network.security.ports.banned.override string, with the 22 value**
+**We can allow this restricted port making some configuration inside the mozilla browser: [allow restricted ports](https://support.mozilla.org/en-US/questions/1083282#answer-780274). Go into the about:config page in the url, search for the ports and add the network.security.ports.banned.override string, with the 22 value**
 
 ![3](images/add_string.png?raw=true "add_string")
 
