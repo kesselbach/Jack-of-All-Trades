@@ -1,5 +1,5 @@
 # 'Jack-of-All-Trades' box writeup
-## Jack of All Trades is a CTF box written by MuirlandOracle and available on the [TryHackMe platform](https://tryhackme.com).
+## Jack of All Trades is a CTF box originally designed for Securi-Tay 2020 and written by MuirlandOracle, available on the [TryHackMe platform](https://tryhackme.com).
 ## Read about [How to allow restricted ports](https://support.mozilla.org/en-US/questions/1083282#answer-780274)
 ## ![bg](images/backgroundjack.jpeg?raw=true "Title")
 + **We deploy the machine and start with an nmap scan for open ports**
