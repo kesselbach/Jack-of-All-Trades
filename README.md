@@ -127,7 +127,7 @@
 
 ``Sorry, user jack may not run sudo on jack-of-all-trades.``
 
-**Let's check for some advanced linux file permissions, suid & guid
+**Let's check for some advanced linux file permissions, suid & guid**
 
 ``find / -type f -user root -perm -4000 -print 2>/dev/null``
 
