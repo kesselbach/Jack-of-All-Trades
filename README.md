@@ -1,6 +1,6 @@
 # 'Jack-of-All-Trades' box writeup
 ## Jack of All Trades is a CTF box originally designed for Securi-Tay 2020 and written by MuirlandOracle, available on the [TryHackMe platform](https://tryhackme.com).
-## Read about [How to allow restricted ports](https://support.mozilla.org/en-US/questions/1083282#answer-780274)
+## Read about [How to allow restricted ports](https://support.mozilla.org/en-US/questions/1083282#answer-780274), [SUID files](https://www.tecmint.com/how-to-find-files-with-suid-and-sgid-permissions-in-linux/) and [Steghide](http://steghide.sourceforge.net/)
 ## ![bg](images/backgroundjack.jpeg?raw=true "Title")
 
 ## Foothold
@@ -127,7 +127,7 @@
 
 ``Sorry, user jack may not run sudo on jack-of-all-trades.``
 
-**Let's check for some advanced linux file permissions, suid & guid**
+**Let's check for some advanced linux file permissions - suid**
 
 ``find / -type f -user root -perm -4000 -print 2>/dev/null``
 
@@ -142,15 +142,5 @@
 + **And here's our root flag. This was a very nice box with some steganography challenges into, a reversed ports configuration of services and some file permissions. All thanks to MuirlandOracle, creator of this wonderful box**
 
 ![15](images/root_flag_jack.jpg?raw=true "suid")
-
-
-
-
-
-
-
-
-
-
 
 
