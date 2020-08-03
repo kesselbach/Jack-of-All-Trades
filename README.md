@@ -103,9 +103,19 @@
 
 ![13](images/hydra(1).jpg?raw=true "hydra")
 
-**Let's connect into the ssv server with our credentials**
+**Let's connect into the ssh server with our credentials on the 80 port**
 
+``ssh jake@10.10.252.248 -p 80``
 
++ **In the /home/jack directory we can see the user flag, but in the .jpg format. Let's get the image on our machine, using the same method as above, and then open it**
+
+**``www-data@jack-of-all-trades:/home$``** ``python -m SimpleHTTPServer 6999``
+
+**``{kali@kali:Jack of All Trades_0}$``** ``wget 10.10.252.248:6999/user.jpg``
+
+**Opening the user.jpg flag, we can see the Penguing recipe and the user flag**
+
+![14](images/user.flag.jpg?raw=true "user")
 
 
 
