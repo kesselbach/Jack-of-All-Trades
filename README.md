@@ -123,6 +123,28 @@
 
 ## Root escalation
 
++ **Checking for ``sudo -l`` on the jack user gives us no good path. He has no sudo permission on the machine**
+
+``Sorry, user jack may not run sudo on jack-of-all-trades.``
+
+**Let's check for some advanced linux file permissions, suid & guid
+
+``find / -type f -user root -perm -4000 -print 2>/dev/null``
+
++ **This gives us some interesting output. The strings executable has got file owner permission when executing a command**
+
+![15](images/suid.jpg?raw=true "suid")
+
+**Knowing this, let's try to use strings on our root.txt flag**
+
+``strings /root/root.txt``
+
++ **And here's our root flag. This was a very nice box with some steganography challenges into, a reversed ports configuration of services and some file permissions. All thanks to MuirlandOracle, creator of this wonderful box**
+
+![15](images/root_flag_jack.jpg?raw=true "suid")
+
+
+
 
 
 
