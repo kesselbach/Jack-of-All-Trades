@@ -2,6 +2,9 @@
 ## Jack of All Trades is a CTF box originally designed for Securi-Tay 2020 and written by MuirlandOracle, available on the [TryHackMe platform](https://tryhackme.com).
 ## Read about [How to allow restricted ports](https://support.mozilla.org/en-US/questions/1083282#answer-780274)
 ## ![bg](images/backgroundjack.jpeg?raw=true "Title")
+
+## Foothold
+
 + **We deploy the machine and start with an nmap scan for open ports**
 
 ``nmap -sV -sC -oN scan1 10.10.252.248``
@@ -78,6 +81,8 @@
 
 ![12](images/access.jpg?raw=true "access")
 
+## User escalation
+
 **Here we got our access into the system. Let's spawn an interactive shell with python and continue to enumerate**
 
 ``python -c 'import pty; pty.spawn("/bin/bash")'``
@@ -95,7 +100,6 @@
 **Our machine**
 
 **``{kali@kali:Jack of All Trades_0}$``** ``wget 10.10.252.248:6999/jacks_password_list``
-
 
 + **Now, having the wordlist, let's start the bruteforce phase. Don't forget to set the port for the ssh service, because it's not on the default (22), but the 80 one**
 
@@ -116,6 +120,8 @@
 **Opening the user.jpg flag, we can see the Penguing recipe and the user flag**
 
 ![14](images/user.flag.jpg?raw=true "user")
+
+## Root escalation
 
 
 
